@@ -38,7 +38,7 @@ Ogni documento in `01-company/` … `06-meetings/` inizia con questo blocco. `00
 | `proposed` | pronto per la revisione, non approvato | ipotesi |
 | `active` | valido e in uso | confermato |
 | `accepted` | decisione approvata | confermato |
-| `rejected` | decisione scartata | da non applicare, utile come contesto |
+| `rejected` | proposta respinta | da non applicare, utile come contesto |
 | `deprecated` | non più valido, senza sostituto | obsoleto |
 | `superseded` | sostituito da un altro documento | obsoleto |
 

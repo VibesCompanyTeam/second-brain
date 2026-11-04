@@ -16,21 +16,24 @@ dagli strumenti AI che usano, come Claude Desktop e ChatGPT.
 - **Gli strumenti AI ricevono regole chiare.** Citano le fonti e non scambiano una bozza per una decisione.
 - **I file restano vostri.** Sono testo semplice su Git, senza dipendere da un'applicazione.
 
+Questo repository pubblico ha anche il blocco dei push con segreti riconosciuti e il divieto di force push
+su `main`: sono impostazioni di GitHub e non si copiano con i file.
+
 **Limite attuale:** il collegamento da Claude Desktop e ChatGPT è documentato ma non ancora provato. Il
 contenuto e le regole sono stati provati con un agente AI che leggeva i file direttamente.
 
 ## Usarlo come base per un'azienda
 
-Lo strumento rimuove la demo, riporta i documenti del sistema a `proposed` per l'approvazione interna e
-rigenera l'indice:
+Lo strumento rimuove la demo e sé stesso, riporta i documenti del sistema a `proposed` per l'approvazione
+interna e rigenera l'indice:
 
 ```sh
 uv run tools/new_client.py --owner responsabile-conoscenza          # mostra cosa cambierà
 uv run tools/new_client.py --owner responsabile-conoscenza --apply  # applica le modifiche
 ```
 
-Poi pubblica il risultato in un **nuovo repository privato**, senza la cronologia di questo, e rivedi la
-[policy su sicurezza e dati](01-company/policies/sicurezza-e-dati.md).
+Poi segui la [guida alla prima installazione](04-knowledge/playbooks/prima-installazione.md): il risultato va
+in un **nuovo repository privato**, senza la cronologia di questo.
 
 Il codice e i documenti sono coperti da tutti i diritti riservati: per adottarlo, contatta
 [VibesCompanyTeam](https://github.com/VibesCompanyTeam).
@@ -63,7 +66,11 @@ Servono [Git](https://git-scm.com/) e [uv](https://docs.astral.sh/uv/). Per legg
 qualsiasi editor Markdown, oppure aprire la cartella come vault in [Obsidian](https://obsidian.md/) seguendo
 [questa guida](04-knowledge/playbooks/usare-obsidian.md).
 
+Per avviare una nuova installazione, segui la [guida](04-knowledge/playbooks/prima-installazione.md).
+
 ```sh
+git clone <url-del-repository>
+cd <nome-del-repository>
 uv run tools/check_docs.py
 ```
 
@@ -79,7 +86,7 @@ uv run tools/check_docs.py
 06-meetings/    verbali di riunione
 07-templates/   modelli da copiare
 99-archive/     materiale non più valido, ignorato salvo richiesta esplicita
-tools/          verifica dei documenti, indice, preparazione di una nuova installazione
+tools/          verifica dei documenti e generazione dell'indice
 INDEX.md        elenco generato di tutti i documenti, con stato e responsabile
 AGENTS.md       regole per gli strumenti AI (CLAUDE.md rimanda qui)
 ```
@@ -132,6 +139,6 @@ provare l'accesso in sola lettura.
 | Indice | Generato e controllato in CI |
 | Segreti | gitleaks in CI su tutta la cronologia, dopo il push |
 | Azioni CI | Bloccate per SHA e aggiornate da Dependabot |
-| Backup e accesso degli strumenti AI | Da configurare su ogni installazione |
+| Protezione del branch, backup e accesso degli strumenti AI | Da configurare su ogni installazione |
 
 Le regole di sicurezza sono in [`sicurezza-e-dati.md`](01-company/policies/sicurezza-e-dati.md).

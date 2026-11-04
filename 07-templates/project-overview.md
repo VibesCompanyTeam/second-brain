@@ -25,4 +25,4 @@ Copia in `02-projects/<nome-progetto>/overview.md`. Accanto: `requirements/`, `a
 
 ## Task
 
-Link alla vista GitHub Issues o Projects.
+Link alle GitHub Issues del progetto.

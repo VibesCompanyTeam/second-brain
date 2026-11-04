@@ -13,6 +13,7 @@ from build_index import render
 from check_docs import CHECKED, frontmatter
 
 DEMO_BLOCK = re.compile(r"<!-- demo:start -->.*?<!-- demo:end -->\n*", re.S)
+CI_JOB = re.compile(r"^  new-client:\n(?:(?:    .*)?\n)*", re.M)
 REVIEW_DAYS = 90
 
 
@@ -51,6 +52,7 @@ def main():
         print(f"remove {path.relative_to(root)}")
     for path in keep:
         print(f"reset  {path.relative_to(root)}")
+    print("remove tools/new_client.py and its CI job")
     if not args.apply:
         print("Dry run: nothing changed. Add --apply to write.")
         return
@@ -69,7 +71,10 @@ def main():
             else:
                 (folder / ".gitkeep").touch()
     (root / "INDEX.md").write_text(render(root), encoding="utf-8")
-    print("Done. Publish the result in a new private repository, without this history.")
+    workflow = root / ".github" / "workflows" / "check.yml"
+    workflow.write_text(CI_JOB.sub("", workflow.read_text(encoding="utf-8")), encoding="utf-8")
+    Path(__file__).unlink()
+    print("Done. Next steps: 04-knowledge/playbooks/prima-installazione.md")
 
 
 if __name__ == "__main__":
