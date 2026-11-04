@@ -35,6 +35,7 @@ in `00-inbox/` non sono elencate.
 | [Riunione di avvio](04-knowledge/patterns/riunione-di-avvio.md) | knowledge | active | delivery | 2027-04-20 |
 | [Collegare gli strumenti AI](04-knowledge/playbooks/collegare-strumenti-ai.md) | playbook | draft | responsabile-conoscenza | 2027-02-04 |
 | [Avvio di un nuovo cliente](04-knowledge/playbooks/onboarding-cliente.md) | playbook | active | delivery | 2027-04-20 |
+| [Prima installazione](04-knowledge/playbooks/prima-installazione.md) | playbook | active | responsabile-conoscenza | 2027-02-04 |
 | [Usare Obsidian con il repository](04-knowledge/playbooks/usare-obsidian.md) | playbook | active | responsabile-conoscenza | 2027-02-04 |
 | [Benchmark delle tariffe di consulenza](04-knowledge/research/benchmark-tariffe-consulenza.md) | research | active | commerciale | 2026-09-30 |
 
