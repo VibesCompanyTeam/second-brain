@@ -16,6 +16,9 @@ dagli strumenti AI che usano, come Claude Desktop e ChatGPT.
 - **Gli strumenti AI ricevono regole chiare.** Citano le fonti e non scambiano una bozza per una decisione.
 - **I file restano vostri.** Sono testo semplice su Git, senza dipendere da un'applicazione.
 
+Questo repository pubblico ha anche il blocco dei push con segreti riconosciuti e il divieto di force push
+su `main`: sono impostazioni di GitHub e non si copiano con i file.
+
 **Limite attuale:** il collegamento da Claude Desktop e ChatGPT è documentato ma non ancora provato. Il
 contenuto e le regole sono stati provati con un agente AI che leggeva i file direttamente.
 
@@ -64,6 +67,8 @@ qualsiasi editor Markdown, oppure aprire la cartella come vault in [Obsidian](ht
 [questa guida](04-knowledge/playbooks/usare-obsidian.md).
 
 ```sh
+git clone <url-del-repository>
+cd <nome-del-repository>
 uv run tools/check_docs.py
 ```
 
@@ -132,6 +137,6 @@ provare l'accesso in sola lettura.
 | Indice | Generato e controllato in CI |
 | Segreti | gitleaks in CI su tutta la cronologia, dopo il push |
 | Azioni CI | Bloccate per SHA e aggiornate da Dependabot |
-| Backup e accesso degli strumenti AI | Da configurare su ogni installazione |
+| Protezione del branch, backup e accesso degli strumenti AI | Da configurare su ogni installazione |
 
 Le regole di sicurezza sono in [`sicurezza-e-dati.md`](01-company/policies/sicurezza-e-dati.md).
